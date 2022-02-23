@@ -6,9 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.sdacademy.projektplus.quiz.database.entities.PlayerEntity;
 import pl.sdacademy.projektplus.quiz.database.repositories.PlayerRepository;
-import services.QuizDataService;
+import pl.sdacademy.projektplus.quiz.services.QuizDataService;
 import java.util.List;
-//import pl.sdacademy.projektplus.quiz.services.QuizDataService;
+
 
 @Component
 @Log
@@ -34,10 +34,6 @@ public class StartupRunner implements CommandLineRunner {
             log.info("Retrieved player: " + player);
 
         }
-//        @Override
-//        public void run (String...args) throws Exception {
-            log.info("Executing startup actions...");
-
             quizDataService.getQuizCategories();
         }
     }

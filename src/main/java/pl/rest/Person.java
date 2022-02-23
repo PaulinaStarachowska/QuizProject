@@ -1,4 +1,4 @@
-package pl.sdacademy.projektplus.quiz;
+package pl.rest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

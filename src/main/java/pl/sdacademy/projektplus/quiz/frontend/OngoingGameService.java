@@ -5,7 +5,7 @@ import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.dto.QuestionsDto;
-import services.QuizDataService;
+import pl.sdacademy.projektplus.quiz.services.QuizDataService;
 
 import java.util.ArrayList;
 import java.util.Collections;
