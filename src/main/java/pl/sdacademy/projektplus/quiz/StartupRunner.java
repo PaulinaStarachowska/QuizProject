@@ -6,8 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.sdacademy.projektplus.quiz.database.entities.PlayerEntity;
 import pl.sdacademy.projektplus.quiz.database.repositories.PlayerRepository;
-
+import services.QuizDataService;
 import java.util.List;
+//import pl.sdacademy.projektplus.quiz.services.QuizDataService;
 
 @Component
 @Log
@@ -16,8 +17,12 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private PlayerRepository playerRepository;
 
+    @Autowired
+    private QuizDataService quizDataService;
+
+
     @Override
-    public void run(String...args) throws Exception {
+    public void run(String... args) throws Exception {
         log.info("Executing startup actions...");
         playerRepository.save(new PlayerEntity("John"));
         playerRepository.save(new PlayerEntity("Harry"));
@@ -27,6 +32,12 @@ public class StartupRunner implements CommandLineRunner {
         List<PlayerEntity> playersFromDatabase = playerRepository.findAll();
         for (PlayerEntity player : playersFromDatabase) {
             log.info("Retrieved player: " + player);
+
+        }
+//        @Override
+//        public void run (String...args) throws Exception {
+            log.info("Executing startup actions...");
+
+            quizDataService.getQuizCategories();
         }
     }
-}
